@@ -146,6 +146,8 @@ img {
     height: 600px;
     text-align: center;
     background: var(--navyblue, #2E2F42);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office.jpg);
+    background-size: cover;
     padding: 188px 0;
 }
 
@@ -222,6 +224,21 @@ img {
 .main-s-s-item{
     list-style-type: none;
     width: calc((100% - 72px) / 4);
+}
+
+.main-s-s-icon{
+    border-radius: 4px;
+    background: var(--cloud, #F4F4FD);
+    margin-bottom: 8px;
+    width: 100%;
+    height: 100%;
+    max-width: 264px;
+    max-height: 112px;
+    display: inline-block;
+}
+
+.main-s-s-icon img{
+    padding: 24px 100px;
 }
 
 .main-s-s-title{
