@@ -104,6 +104,7 @@ img {
 }
 
 .header-link{
+    position: relative;
     text-decoration: none;
     color: var(--navyblue, #2E2F42);
     font-family: 'Roboto', sans-serif;
@@ -114,7 +115,13 @@ img {
     padding: 24px 0;
 }
 
-.header-link:hover, .header-link:focus {
+.emphasis::after {
+    position: absolute;
+    top: 67px;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 4px;
     border-radius: 2px;
     background: var(--ocean, #404BBF);
 }
@@ -203,9 +210,40 @@ img {
     background-color: var(--ocean, #404BBF);
 }
 
+.backdrop {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    background: rgba(46, 47, 66, 0.40);
+}
+
+.modal {
+    display: flex;
+    justify-content: flex-end;
+    padding: 32px;
+    width: 408px;
+    height: 584px;
+    margin: 80px auto auto;
+    border-radius: 4px;
+    background: var(--dairy, #FCFCFC);
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+}
+
+.modal-btn {
+    padding: 8px;
+    width: 24px;
+    height: 24px;
+    fill: var(--cornflower, #E7E9FC);
+    stroke-width: 1px;
+    stroke: rgba(0, 0, 0, 0.10);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
 /* ----------Main (section-2) */
 
-.main-second-section{
+.main-advantages{
     padding: 120px 0;
 }
 
@@ -222,17 +260,17 @@ img {
     overflow: hidden;
 }
 
-.main-s-s-list{
+.main-advantages-list{
     display: flex;
     gap: 24px;
 }
 
-.main-s-s-item{
+.main-advantages-item{
     list-style-type: none;
     width: calc((100% - 72px) / 4);
 }
 
-.main-s-s-icon{
+.main-advantages-icon{
     border-radius: 4px;
     background: var(--cloud, #F4F4FD);
     margin-bottom: 8px;
@@ -243,11 +281,11 @@ img {
     display: inline-block;
 }
 
-.main-s-s-icon img{
+.main-advantages-icon img{
     padding: 24px 100px;
 }
 
-.main-s-s-title{
+.main-advantages-title{
     color: var(--navyblue, #2E2F42);
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
@@ -258,7 +296,7 @@ img {
     margin-bottom: 8px;
 }
 
-.mains-s-s-text{
+.mains-advantages-text{
     color: var(--slate, #434455);
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
@@ -299,12 +337,12 @@ img {
 
 /* ----------Main (section-4) */
 
-.main-fourth-section{
+.main-team{
     background-color: var(--cloud, #F4F4FD);
     padding: 120px 0;
 }
 
-.main-f-s-title{
+.main-team-title{
     margin-bottom: 72px;
     color: var(--navyblue, #2E2F42);
     text-align: center;
@@ -317,12 +355,12 @@ img {
     text-transform: capitalize;
 }
 
-.main-f-s-list{
+.main-team-list{
     display: flex;
     gap: 24px;
 }
 
-.container-main-f-s li{
+.container-main-team li{
     display: inline-flex;
     padding-bottom: 0px;
     flex-direction: column;
@@ -331,22 +369,19 @@ img {
     gap: 32px;
 }
 
-.main-f-s-item{
+.main-team-item{
     list-style-type: none;
     border-radius: 0px 0px 4px 4px;
     background: var(--white, #FFF);
-    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08);
+    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
     width: calc((100% - 72px) / 4);
+
 }
 
 .container-item-text{
     padding: 32px 16px;
     border: 1px solid #e7e9fc;
     border-top: none;
-}
-
-.container-item-text ul {
-    display: flex;
 }
 
 .main-team-names {
@@ -361,7 +396,7 @@ img {
     margin-bottom: 8px
 }
 
-.main-f-s-text {
+.main-team-text {
     color: var(--slate, #434455);
     text-align: center;
     font-family: 'Roboto', sans-serif;
@@ -373,7 +408,12 @@ img {
     margin-bottom: 8px;
 }
 
-.f-s-icon {
+.team-list-icon {
+    gap: 24px;
+    display: flex;
+}
+
+.team-icon {
     background-color: var(--iris);
     border-radius: 50%;
     width: 40px;
@@ -381,12 +421,8 @@ img {
     padding: 11px;
 }
 
-.f-s-icon img {
+.team-icon img {
     fill: var(--cloud);
-}
-
-.f-s-icon:not(:last-child) {
-    margin-right: 24px;
 }
 
 /* ----------Main (section-5) */
@@ -429,8 +465,9 @@ img {
     margin-right: 120px;
 }
 
-.container-footer>div>ul {
+.footer-list-icon {
     display: flex;
+    gap: 16px;
 }
 
 .footer-link {
@@ -510,6 +547,7 @@ img {
     color: var(--white, #ffffff);
     cursor: pointer;
     border:  1px solid transparent;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 1px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.10);
 }
 
 .portfolio-img-list{
@@ -523,6 +561,10 @@ img {
     list-style-type: none;
     width: calc((100% - 48px) / 3);
     border: 1px solid var(--cornflower, #E7E9FC);
+}
+
+.portfolio-img-item:hover, .portfolio-img-item:focus {
+    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
 .box{
