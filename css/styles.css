@@ -117,6 +117,7 @@ img {
 
 .emphasis {
     color: var(--ocean, #404BBF);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .emphasis::after {
@@ -129,7 +130,6 @@ img {
     border-radius: 2px;
     background: var(--ocean, #404BBF);
     bottom: -1px;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-address{
@@ -670,7 +670,7 @@ img {
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
-.visually-hidden {
+.is-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
