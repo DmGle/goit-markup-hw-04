@@ -416,6 +416,10 @@ img {
 }
 
 .social-networks {
+    fill: var(--lightslate, #8E8F99);
+}
+
+.social-networks:hover, .social-networks:focus {
     fill: var(--cloud, #F4F4FD);
 }
 
@@ -457,7 +461,6 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--lightslate, #8E8F99);
 }
 
 .main-customers-link:hover, .main-customers-link:focus {
