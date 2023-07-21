@@ -143,6 +143,7 @@ img {
 
 .header-address-item {
     list-style-type: none;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-address-link{
